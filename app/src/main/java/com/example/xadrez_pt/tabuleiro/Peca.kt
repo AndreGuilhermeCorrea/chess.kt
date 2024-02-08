@@ -5,10 +5,7 @@ abstract class Peca{
 
     var posicao: Posicao? = null
     private var tabuleiro: Tabuleiro? = null
-    open fun Peca(tabuleiro: Tabuleiro?) {
-        this.tabuleiro = tabuleiro!!
-        posicao = null
-    }
+
     protected open fun getTabuleiro(): Tabuleiro? {
         return tabuleiro
     }

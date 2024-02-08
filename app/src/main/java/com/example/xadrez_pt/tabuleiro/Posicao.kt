@@ -4,10 +4,6 @@ class Posicao {
     private var linha = 0
     private var coluna = 0
 
-    fun Posicao(linha: Int, coluna: Int) {
-        this.linha = linha
-        this.coluna = coluna
-    }
 
     fun getLinha(): Int {
         return linha

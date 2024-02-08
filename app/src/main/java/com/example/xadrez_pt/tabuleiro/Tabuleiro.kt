@@ -6,11 +6,6 @@ class Tabuleiro {
 
     private lateinit var pecas: Array<Array<Peca?>>
 
-    fun Tabuleiro(linhas: Int, colunas: Int) {
-        this.linhas = linhas
-        this.colunas = colunas
-        pecas = Array(linhas) { arrayOfNulls(colunas) }
-    }
 
     fun getLinhas(): Int {
         return linhas
