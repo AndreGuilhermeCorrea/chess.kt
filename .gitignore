@@ -15,3 +15,12 @@
 local.properties
 /app/src/androidTest/java/com/example/xadrez_pt/
 /app/src/test/java/com/example/xadrez_pt/
+/app/src/androidTest/
+/app/src/test/
+/app/build.gradle.kts
+/app/proguard-rules.pro
+/build.gradle.kts
+/gradle.properties
+/gradlew
+/gradlew.bat
+/settings.gradle.kts
