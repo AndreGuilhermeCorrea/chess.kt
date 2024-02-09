@@ -12,7 +12,7 @@
         android:theme="@style/Theme.Xadrez_pt"
         tools:targetApi="31">
         <activity
-            android:name=".ui.TabuleiroActivity"
+            android:name=".controller.TabuleiroActivity"
             android:exported="false" />
         <activity android:name=".MainActivity" />
         <activity

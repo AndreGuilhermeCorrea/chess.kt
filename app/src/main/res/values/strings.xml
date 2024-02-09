@@ -11,4 +11,5 @@
         Lorem ipsum dolor sit amet..
     </string>
     <string name="chess">CHESS</string>
+    <string name="tempo">Tempo: </string>
 </resources>
