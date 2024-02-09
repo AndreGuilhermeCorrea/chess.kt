@@ -8,71 +8,57 @@
     android:background="@color/gray_dark"
     tools:context=".controller.TabuleiroActivity">
 
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/SplashScreenImage"
+            android:layout_width="match_parent"
+            android:layout_height="146dp"
+            android:src="@drawable/horse" />
 
-        <TableRow
+        <TextView
+            android:id="@+id/textview_tabuleiro_id_time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center">
+            android:gravity="center"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/tempo"
+            android:textColor="@color/gray_light"
+            android:textSize="16sp" />
 
-            <ImageView
-                android:id="@+id/SplashScreenImage"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:src="@drawable/horse" />
-        </TableRow>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center">
+    <FrameLayout
+        android:id="@+id/tabuleiroContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/splashScreen_textview_id"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="serif-monospace"
-                android:text="@string/chess"
-                android:textAlignment="center"
-                android:textColor="@color/gray_light"
-                android:textSize="20dp"
-                android:textStyle="bold|italic" />
-
-        </TableRow>
-
-        <FrameLayout
-            android:id="@+id/tabuleiroContainer"
+        <com.example.xadrez_pt.view.TabuleiroView
+            android:id="@+id/tabuleiroView"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="1"
-            android:background="@color/gray_dark">
+            android:layout_height="400dp" />
 
-            <com.example.xadrez_pt.view.TabuleiroView
-                android:id="@+id/tabuleiroView"
-                android:layout_width="wrap_content"
-                android:layout_height="420dp" />
-        </FrameLayout>
+    </FrameLayout>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="right">
+    <TextView
 
-            <TextView
-                android:id="@+id/textview_tabuleiro_id_time"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-medium"
-                android:text="@string/tempo"
-                android:textColor="@color/gray_light"
-                android:textSize="16sp" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif-monospace"
+        android:text="lorem_ipsum"
+        android:textAlignment="center"
+        android:textColor="@color/gray_light"
+        android:textSize="20dp"
+        android:textStyle="bold|italic" />
 
-        </TableRow>
+    <TextView
 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:text="lorem_ipsum"
+        android:textColor="@color/gray_light"
+        android:textSize="16sp" />
 
-    </TableLayout>
 
 </LinearLayout >
