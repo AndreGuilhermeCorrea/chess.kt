@@ -10,11 +10,72 @@
     tools:context=".MainActivity"
     tools:visibility="visible">
 
+
+    <ImageView
+        android:id="@+id/SplashScreenImage"
+        android:layout_width="92dp"
+        android:layout_height="88dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"
+        android:src="@drawable/horse" />
+
+    <TextView
+        android:id="@+id/textview_tabuleiro_id_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/SplashScreenImage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:textStyle="bold|italic"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/chess"
+        android:textColor="@color/gray_light"
+        android:textSize="12pt" />
+
+
+    <EditText
+        android:id="@+id/jogador1TextView"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textview_tabuleiro_id_time"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"
+        android:hint="@string/jogador_1"
+        android:inputType="textPersonName"
+        android:fontFamily="sans-serif-light"
+        android:textColor="@color/gray_light"
+        android:textSize="18dp"  />
+
+    <EditText
+        android:id="@+id/jogador2TextView"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/jogador1TextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        android:hint="@string/jogador_2"
+        android:inputType="textPersonName"
+        android:fontFamily="sans-serif-light"
+        android:textColor="@color/gray_light"
+        android:textSize="18dp" />
+
     <Button
         android:id="@+id/playGame"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Jogar"
-        android:onClick="onPlayGameClick" />
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/jogador2TextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="@color/gold"
+        android:textColor="@color/gray_dark"
+        android:onClick="onPlayGameClick"
+        android:textStyle="bold|italic"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="12pt"
+        android:text="@string/jogar" />
+
+
+
 </RelativeLayout>

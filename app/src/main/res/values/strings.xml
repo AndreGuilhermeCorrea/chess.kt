@@ -12,4 +12,7 @@
     </string>
     <string name="chess">CHESS</string>
     <string name="tempo">Tempo: </string>
+    <string name="jogador_2">Jogador 2</string>
+    <string name="jogador_1">Jogador 1</string>
+    <string name="jogar">Jogar</string>
 </resources>
