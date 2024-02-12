@@ -32,20 +32,19 @@
             android:textColor="@color/gray_light"
             android:textSize="16pt" />
 
-            <FrameLayout
-                android:id="@+id/tabuleiroContainer"
-                android:layout_width="140pt"
-                android:layout_height="140pt"
-                android:gravity="center"
-                android:layout_margin="10dp"
-                android:orientation="vertical">
+        <FrameLayout
+            android:id="@+id/tabuleiroContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
 
-                <com.example.xadrez_pt.view.TabuleiroView
-                    android:id="@+id/tabuleiroView"
-                    android:layout_width="140pt"
-                    android:layout_height="140pt" />
+            <com.example.xadrez_pt.view.TabuleiroView
+                android:id="@+id/tabuleiroView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
-            </FrameLayout>
+        </FrameLayout>
 
 
         <TextView
