@@ -24,5 +24,14 @@ class TabuleiroActivity : AppCompatActivity() {
         // Inflando a painelView e adicionando ao contêiner
         val painelView = PainelView(this)
         painelContainer.addView(painelView)
+
+
+        // Recebe os dados da MainActivity
+        val jogador1Nome = intent.getStringExtra("jogador1Nome") ?: "Jogador 1"
+        val jogador2Nome = intent.getStringExtra("jogador2Nome") ?: "Jogador 2"
+
+
+        painelView.setJogador1Nome(jogador1Nome)
+        painelView.setJogador2Nome(jogador2Nome)
     }
 }

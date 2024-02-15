@@ -26,10 +26,13 @@ class PainelView @JvmOverloads constructor(
 
     private val spacing = resources.getDimensionPixelSize(R.dimen.text_spacing).toFloat()
 
+
+
+
     init {
 
-        jogador1TextView = createTextView("Jogador 1")
-        jogador2TextView = createTextView("Jogador 2")
+        jogador1TextView = createTextView("")
+        jogador2TextView = createTextView("")
 
         tempoJogo= createTextView("Tempo Jogo")
         tempoJogador1= createTextView("Tempo Jogador1")
@@ -70,5 +73,13 @@ class PainelView @JvmOverloads constructor(
         layoutParams.topMargin  = (lineNumber * spacing).toInt()
         layoutParams.marginStart = spacing.toInt()
         return layoutParams
+    }
+
+    fun setJogador1Nome(jogador1Nome: String) {
+        jogador1TextView.text = "Jogador 1: $jogador1Nome"
+    }
+
+    fun setJogador2Nome(jogador2Nome: String) {
+        jogador2TextView.text = "Jogador 2: $jogador2Nome"
     }
 }
