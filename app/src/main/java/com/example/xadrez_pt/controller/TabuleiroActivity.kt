@@ -30,7 +30,7 @@ class TabuleiroActivity : AppCompatActivity() {
         val jogador1Nome = intent.getStringExtra("jogador1Nome") ?: "Jogador 1"
         val jogador2Nome = intent.getStringExtra("jogador2Nome") ?: "Jogador 2"
 
-
+        painelView.iniciarJogo()
         painelView.setJogador1Nome(jogador1Nome)
         painelView.setJogador2Nome(jogador2Nome)
     }

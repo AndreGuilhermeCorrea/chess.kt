@@ -3,11 +3,13 @@ package com.example.xadrez_pt.view
 import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Paint
+import android.os.CountDownTimer
 import android.util.AttributeSet
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import com.example.xadrez_pt.R
+import java.util.concurrent.TimeUnit
 
 @SuppressLint("ClickableViewAccessibility")
 class PainelView @JvmOverloads constructor(
@@ -23,6 +25,10 @@ class PainelView @JvmOverloads constructor(
     private val tempoJogo: TextView
     private val tempoJogador1: TextView
     private val tempoJogador2: TextView
+
+    private var tempoJogoAtual: Long = 0
+    private var tempoJogador1Atual: Long = 0
+    private var tempoJogador2Atual: Long = 0
 
     private val spacing = resources.getDimensionPixelSize(R.dimen.text_spacing).toFloat()
 
@@ -45,6 +51,31 @@ class PainelView @JvmOverloads constructor(
         addView(tempoJogo, createLayoutParams(3))
         addView(tempoJogador1, createLayoutParams(4))
         addView(tempoJogador2, createLayoutParams(5))
+    }
+
+
+    fun iniciarJogo() {
+        val countUpTimer = object : CountDownTimer(Long.MAX_VALUE, 1000) {
+            override fun onTick(millisUntilFinished: Long) {
+                tempoJogoAtual += 1000
+                tempoJogo.text = "Tempo Jogo: ${formatarTempo(tempoJogoAtual)}"
+            }
+
+            override fun onFinish() {
+
+            }
+        }
+
+        countUpTimer.start()
+    }
+
+
+    private fun formatarTempo(tempo: Long): String {
+        val horas = TimeUnit.MILLISECONDS.toHours(tempo)
+        val minutos = TimeUnit.MILLISECONDS.toMinutes(tempo)
+        val segundos = TimeUnit.MILLISECONDS.toSeconds(tempo) -
+                TimeUnit.MINUTES.toSeconds(minutos)
+        return String.format("%02d:%02d:%02d", horas, minutos, segundos)
     }
 
     private fun createDefaultPaint(): Paint {
