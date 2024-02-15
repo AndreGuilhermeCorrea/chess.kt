@@ -2,14 +2,12 @@ package com.example.xadrez_pt.view
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.graphics.Canvas
 import android.graphics.Paint
 import android.util.AttributeSet
-import android.widget.EditText
 import android.widget.RelativeLayout
+import android.widget.TextView
 import androidx.core.content.ContextCompat
 import com.example.xadrez_pt.R
-
 
 @SuppressLint("ClickableViewAccessibility")
 class PainelView @JvmOverloads constructor(
@@ -18,74 +16,59 @@ class PainelView @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : RelativeLayout(context, attrs, defStyleAttr) {
 
-    private val paint = Paint().apply {
-        color = ContextCompat.getColor(context, R.color.gray)
-        textSize = resources.getDimensionPixelSize(R.dimen.text_size).toFloat()
-    }
+    private val paint = createDefaultPaint()
 
-    private val jogador1EditText: EditText
-    private val jogador2EditText: EditText
+    private val jogador1TextView: TextView
+    private val jogador2TextView: TextView
+    private val tempoJogo: TextView
+    private val tempoJogador1: TextView
+    private val tempoJogador2: TextView
+
+    private val spacing = resources.getDimensionPixelSize(R.dimen.text_spacing).toFloat()
 
     init {
-        jogador1EditText = EditText(context)
-        jogador1EditText.layoutParams = LayoutParams(
-            LayoutParams.WRAP_CONTENT,
-            LayoutParams.WRAP_CONTENT
-        )
-        jogador1EditText.hint = "Jogador 1"
-        jogador1EditText.setTextColor(ContextCompat.getColor(context, R.color.gray_light))
-        jogador1EditText.textSize = resources.getDimensionPixelSize(R.dimen.text_size).toFloat()
-        addView(jogador1EditText)
 
-        jogador2EditText = EditText(context)
-        jogador2EditText.layoutParams = LayoutParams(
-            LayoutParams.WRAP_CONTENT,
-            LayoutParams.WRAP_CONTENT
-        )
-        jogador2EditText.hint = "Jogador 2"
-        jogador2EditText.setTextColor(ContextCompat.getColor(context, R.color.gray_light))
-        jogador2EditText.textSize = resources.getDimensionPixelSize(R.dimen.text_size).toFloat()
-        addView(jogador2EditText)
+        jogador1TextView = createTextView("Jogador 1")
+        jogador2TextView = createTextView("Jogador 2")
+
+        tempoJogo= createTextView("Tempo Jogo")
+        tempoJogador1= createTextView("Tempo Jogador1")
+        tempoJogador2= createTextView("Tempo Jogador2")
+
+
+
+        addView(jogador1TextView, createLayoutParams(1))
+        addView(jogador2TextView, createLayoutParams(2))
+        addView(tempoJogo, createLayoutParams(3))
+        addView(tempoJogador1, createLayoutParams(4))
+        addView(tempoJogador2, createLayoutParams(5))
     }
 
-    fun setInfo(jogador1: String, jogador2: String) {
-        jogador1EditText.setText(jogador1)
-        jogador2EditText.setText(jogador2)
-        invalidate()
-    }
-
-    fun setTempoTotal(tempoTotal: String) {
-        // Lógica para atualizar tempo total
-        invalidate()
-    }
-
-    fun setTempoJogadores(tempoJogador1: String, tempoJogador2: String) {
-        // Lógica para atualizar tempos dos jogadores
-        invalidate()
-    }
-
-    fun setPecasCapturadas(pecasCapturadasJogador1: Int, pecasCapturadasJogador2: Int) {
-        // Lógica para atualizar peças capturadas
-        invalidate()
-    }
-
-    override fun onDraw(canvas: Canvas) {
-        super.onDraw(canvas)
-
-        val spacing = resources.getDimensionPixelSize(R.dimen.text_spacing).toFloat()
-
-        val textLines = listOf(
-            "Jogador 1: ${jogador1EditText.text}",
-            "Jogador 2: ${jogador2EditText.text}",
-            "Tempo total: 00:00", // Adicione lógica para obter o tempo total
-            "Tempo Jogador 1: 00:00", // Adicione lógica para obter o tempo do jogador 1
-            "Tempo Jogador 2: 00:00", // Adicione lógica para obter o tempo do jogador 2
-            "Pecas Capturadas Jogador 1: 0", // Adicione lógica para obter peças capturadas do jogador 1
-            "Pecas Capturadas Jogador 2: 0"  // Adicione lógica para obter peças capturadas do jogador 2
-        )
-
-        for ((index, text) in textLines.withIndex()) {
-            canvas.drawText(text, spacing, (index + 1) * spacing, paint)
+    private fun createDefaultPaint(): Paint {
+        return Paint().apply {
+            color = ContextCompat.getColor(context, R.color.gray)
+            textSize = resources.getDimensionPixelSize(R.dimen.text_size).toFloat()
         }
+    }
+
+    private fun createTextView(hint: String): TextView {
+        val textView = TextView(context)
+        applyDefaultTextSettings(textView)
+        textView.text = hint
+        return textView
+    }
+
+    private fun applyDefaultTextSettings(textView: TextView) {
+        textView.setTextColor(ContextCompat.getColor(context, R.color.gold))
+        textView.textSize = resources.getDimensionPixelSize(R.dimen.text_size).toFloat()
+    }
+
+    private fun createLayoutParams(lineNumber: Int): LayoutParams {
+        val layoutParams = LayoutParams(
+            LayoutParams.WRAP_CONTENT,
+            LayoutParams.WRAP_CONTENT)
+        layoutParams.topMargin  = (lineNumber * spacing).toInt()
+        layoutParams.marginStart = spacing.toInt()
+        return layoutParams
     }
 }

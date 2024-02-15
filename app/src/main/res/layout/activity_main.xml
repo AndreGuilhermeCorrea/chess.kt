@@ -18,7 +18,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="150dp"
-        android:src="@drawable/horse" />
+        android:src="@drawable/twt" />
 
     <TextView
         android:id="@+id/textview_tabuleiro_id_time"
@@ -76,6 +76,5 @@
         android:textSize="12pt"
         android:text="@string/jogar" />
 
-
-
 </RelativeLayout>
+

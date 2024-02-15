@@ -2,6 +2,6 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="medidaLadrilho">45dp</dimen>
     <dimen name="margemLadrilho">1dp</dimen>
-    <dimen name="text_size">20dp</dimen>
-    <dimen name="text_spacing">20dp</dimen>
+    <dimen name="text_size">03pt</dimen>
+    <dimen name="text_spacing">08pt</dimen>
 </resources>

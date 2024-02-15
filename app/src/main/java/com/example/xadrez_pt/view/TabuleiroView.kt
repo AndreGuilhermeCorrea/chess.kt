@@ -20,13 +20,17 @@
         defStyleAttr: Int = 0
     ) : View(context, attrs, defStyleAttr) {
 
+
+
         // Define o tamanho da View
         override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
             super.onMeasure(widthMeasureSpec, heightMeasureSpec)
             // Calcula o tamanho exato da View com base no tamanho do tabuleiro
             val tabuleiroSize = (8 * (medidaLadrilho + margemLadrilho)).toInt()
             setMeasuredDimension(tabuleiroSize, tabuleiroSize)
+
         }
+
 
         private val paint = Paint()
 
@@ -64,6 +68,7 @@
             super.onDraw(canvas)
             drawTabuleiro(canvas)
             drawPecas(canvas)
+
         }
         private fun drawTabuleiro(canvas: Canvas) {
             for (row in 0 until 8) {

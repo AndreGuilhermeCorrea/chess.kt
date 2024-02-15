@@ -8,6 +8,7 @@
     tools:context=".controller.TabuleiroActivity">
 
     <LinearLayout
+        android:id="@+id/layout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -45,29 +46,32 @@
                 android:layout_height="match_parent" />
 
         </FrameLayout>
-
-
         <TextView
-
+            android:id="@+id/tabuleiro_id_time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="serif-monospace"
-            android:text="lorem_ipsum"
-            android:textAlignment="center"
+            android:gravity="center"
+            android:textStyle="bold|italic"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/lorem_ipsum"
             android:textColor="@color/gray_light"
-            android:textSize="20dp"
-            android:textStyle="bold|italic" />
+            android:textSize="10pt" />
 
-        <com.example.xadrez_pt.view.PainelView
-            android:id="@+id/painelView"
+        <FrameLayout
+            android:id="@+id/painelContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"/>
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <com.example.xadrez_pt.view.PainelView
+                android:id="@+id/painelView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </FrameLayout>
 
     </LinearLayout>
-
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout >
